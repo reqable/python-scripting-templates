@@ -1,0 +1,9 @@
+templates:
+  - name: Aliyun OSS Signature
+    author: Reqable
+    description: Automatically generate signature headers for Alibaba Cloud OSS resource access.
+    script: aliyun_oss_signature.py
+  - name: MD5 for Query Parameters
+    author: Reqable
+    description: Sign all query parameters using MD5 and add the signature value to the request header.
+    script: md5_sign_for_query.py
