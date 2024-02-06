@@ -6,6 +6,6 @@
 
 # Contribution
 
-Step one: Submit the python script to the `templates` directory.
+Step 1: Submit the python script to the `templates` directory.
 
 Step 2: Edit [templates.yaml](https://github.com/reqable/python-scripting-templates/blob/main/templates.yaml) and add the template name, author and description. For localization, please edit `templates.yaml` under the `i18` directory.
