@@ -7,3 +7,7 @@ templates:
     author: Reqable
     description: Sign all query parameters using MD5 and add the signature value to the request header.
     script: md5_sign_for_query.py
+  - name: AES Crypto
+    author: Reqable
+    description: Encrypt or decrypt payload with AES crypto.
+    script: aes_crypto.py

@@ -6,4 +6,8 @@ templates:
   - name: 请求参数MD5签名
     author: Reqable
     description: 使用MD5对所有请求参数进行签名，并将签名值添加到请求头部。
-    script: md5_sign_for_query.py  
+    script: md5_sign_for_query.py
+  - name: AES加解密
+    author: Reqable
+    description: 使用AES算法加密或者解密数据。
+    script: aes_crypto.py
