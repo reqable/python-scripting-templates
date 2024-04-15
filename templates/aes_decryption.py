@@ -9,16 +9,7 @@ from cryptography.hazmat.backends import default_backend
 key = '1234567812345678'.encode('utf-8')
 iv = '1234567812345678'.encode('utf-8')
 
-def encrypt(key, iv, plaintext):
-  backend = default_backend()
-  cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=backend)
-  encryptor = cipher.encryptor()
-  padder = padding.PKCS7(algorithms.AES.block_size).padder()
-  padded_data = padder.update(plaintext) + padder.finalize()
-  ciphertext = encryptor.update(padded_data) + encryptor.finalize()
-  return ciphertext
-
-def decrypt(key, iv, ciphertext):
+def decrypt(ciphertext):
   backend = default_backend()
   cipher = Cipher(algorithms.AES(key), modes.CBC(iv), backend=backend)
   decryptor = cipher.decryptor()
@@ -28,17 +19,12 @@ def decrypt(key, iv, ciphertext):
   return plaintext
 
 def onRequest(context, request):
-  # TODO Replace with your plaintext data.
-  plaintext = 'Your plaintext data'.encode('utf-8')
-  # Optional: Use base64 to encode encrypt bytes.
-  ciphertext = base64.b64encode(encrypt(key, iv, plaintext)).decode('utf-8')
-  print(f'encrypted: {ciphertext}')
   return request
 
 def onResponse(context, response):
   # TODO Replace with your encrypted data.
   # Optional: Use base64 to decode encrypt bytes.
   ciphertext = base64.b64decode('KjiPMFKJFB4e0WTL74lAKR0/BG08Zkn36UqSs3obsnQ=')
-  plaintext = decrypt(key, iv, ciphertext).decode('utf-8')
+  plaintext = decrypt(ciphertext).decode('utf-8')
   print(f'decrypted: {plaintext}')
   return response
