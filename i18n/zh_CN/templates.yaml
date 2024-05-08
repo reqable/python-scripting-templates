@@ -11,6 +11,10 @@ templates:
     author: Reqable
     description: 自动生成阿里云OSS资源访问的签名头部。
     script: aliyun_oss_signature.py
+  - name: AWS签名
+    author: Reqable
+    description: 自动生成AWS请求签名。
+    script: aws_signature.py
   - name: 请求参数MD5签名
     author: Reqable
     description: 使用MD5对所有请求参数进行签名，并将签名值添加到请求头部。
