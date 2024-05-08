@@ -5,7 +5,7 @@ def onRequest(context, request):
   # Sort the query list
   queries = sorted(request.queries)
   # Concat the query parameters
-  text = queries.concat()
+  text = CaptureHttpQueries(queries).concat()
   # Sign using the md5 algorithm
   algorithm = hashlib.md5()
   algorithm.update(text.encode(encoding='utf-8'))
