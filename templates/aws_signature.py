@@ -23,7 +23,7 @@ def onRequest(context, request):
   # Build canonical query parameters.
   canonical_uri = request.path
   sorted_queries = sorted(request.queries)
-  canonical_query_string = CaptureHttpQueries(sorted_queries).concat()
+  canonical_query_string = HttpQueries(sorted_queries).concat()
 
   # Calculate body hash.
   if request.body.isNone:
